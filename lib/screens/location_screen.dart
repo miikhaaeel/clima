@@ -72,7 +72,7 @@ class _LocationScreenState extends State<LocationScreen> {
                     },
                     child: Icon(
                       Icons.near_me,
-                      size: 50.0,
+                      size: 51.0,
                     ),
                   ),
                   FlatButton(
