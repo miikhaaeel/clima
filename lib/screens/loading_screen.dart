@@ -1,5 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
 import 'location.dart';
 
 class LoadingScreen extends StatefulWidget {
@@ -26,10 +28,14 @@ class _LoadingScreenState extends State<LoadingScreen> {
   void getData() async {
     //var url = Uri.https('api.openweathermap.org', '/data/2.5/weather');
 
-    var response = await get(Uri.parse(
+    http.Response response = await http.get(Uri.parse(
         'https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=e7aac0565bddb97869fe722a66a8457c'));
-    print(response.statusCode);
-    print(response.body);
+    if (response.statusCode == 200) {
+      String data = response.body;
+      print(data);
+    } else {
+      print(response.statusCode);
+    }
     //https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=e7aac0565bddb97869fe722a66a8457c
   }
 
