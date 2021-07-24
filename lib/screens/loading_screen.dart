@@ -36,7 +36,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
     } else {
       print(response.statusCode);
     }
-    //https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=e7aac0565bddb97869fe722a66a8457c
+
   }
 
   @override
