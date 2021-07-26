@@ -26,7 +26,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   void getData() async {
-    //var url = Uri.https('api.openweathermap.org', '/data/2.5/weather');
+  
 
     http.Response response = await http.get(Uri.parse(
         'https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=e7aac0565bddb97869fe722a66a8457c'));
