@@ -1,3 +1,5 @@
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:clima/screens/location_screen.dart';
 import 'package:clima/services/networking.dart';
 import 'package:flutter/material.dart';
 
@@ -35,6 +37,15 @@ class _LoadingScreenState extends State<LoadingScreen> {
     print(temperature);
     print(condition);
     print(cityName);
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return LocationScreen();
+        },
+      ),
+    );
   }
 
   void getData() async {}
@@ -43,12 +54,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            //Get the current location
-            getLocationData();
-          },
-          child: Text('Get Location'),
+        child: SpinKitDoubleBounce(
+          color: Colors.white,
+          size: 50.0,
         ),
       ),
     );
