@@ -1,4 +1,4 @@
-import 'package:clima/screens/location.dart';
+import 'package:clima/services/location.dart';
 import 'package:clima/services/networking.dart';
 
 String apiKey = 'e7aac0565bddb97869fe722a66a8457c';
